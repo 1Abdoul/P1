@@ -1,0 +1,62 @@
+
+         val adminCheck = login(connection)
+            if (adminCheck) {
+                var admin0 = new Employee.Admin()
+                println("Welcome! you are loggedin as admin. Please select from menue:")
+                //Admin menu
+                print("Enter 1) to add a new user. ")
+                print("2) to edit a user's information. ")
+                print("3) to delete a user. ")
+                println("4) to query hive. ")
+                println("or 99 to quit.")
+                var i = readInt()
+                while( i != 99) {
+                // i:Int match Block
+                i match {
+                case 1  => admin0.addUser(connection)
+                    println("Success! new user added.")
+                    println("Please enter next choice or enter 99 to end program: ")
+                    i = readInt()
+                case 2  => println("**Editting user**")
+                    editUser(connection)
+                    println("Please enter next choice or enter 99 to end program: ")
+                    i = readInt()
+                case 3  => println("**Deletting user**")
+                    deleteUser(connection)
+                    println("Please enter next choice or enter 99 to end program: ")
+                    i = readInt()
+                case 4  => println("**Query DB**")
+                    //queryOne(connection)
+                    println("Please enter next choice or enter 99 to end program: ")
+                    i = readInt()
+                // catch the default with a variable so you can print it
+                case whoa  => println("Unexpected case: " + whoa.toString)
+                    println("Please try again or enter 99 to end program: ")
+                    i = readInt()
+                } 
+            }
+
+            } else {
+                println("Welcome! Please select from the menue.")
+            println("Enter 1 to update your password. ")           
+            println("Enter 2 to query DB.")
+            println("Or enter 99 to quit.")
+            var i = readInt()
+            while( i != 99) {
+            // i:Int match Block
+            i match {
+            case 1  => updatePass(connection)
+                println("Success!! Your password has been updated.")
+                println("Please enter next choice or enter 99 to end program: ")
+                i = readInt()
+            case 2  => println("**Query DB**")
+                //queryOne(connection)
+                println("Please enter next choice or enter 99 to end program: ")
+                i = readInt()
+            // catch the default with a variable so you can print it
+            case whoa  => println("Unexpected case: " + whoa.toString)
+                println("Please try again or enter 99 to end program: ")
+                i = readInt()
+            } 
+        }
+    }
