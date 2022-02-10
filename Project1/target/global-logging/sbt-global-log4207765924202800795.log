@@ -1,0 +1,64 @@
+[0m[[0m[0mdebug[0m] [0m[0m> Exec(run, Some(3713cbb1-cd9f-432c-acdb-08f3a2689a4e), Some(CommandSource(console0)))[0m
+[0m[[0m[0mdebug[0m] [0m[0mEvaluating tasks: Compile / run[0m
+[0m[[0m[0mdebug[0m] [0m[0mRunning task... Cancel: Signal, check cycles: false, forcegc: true[0m
+[0m[[0m[0minfo[0m] [0m[0mcompiling 1 Scala source to C:\Users\king\Desktop\BigDataModule\Project1\target\scala-2.11\classes ...[0m
+[0m[[0m[33mwarn[0m] [0m[0mthere were 11 deprecation warnings; re-run with -deprecation for details[0m
+[0m[[0m[33mwarn[0m] [0m[0mone warning found[0m
+[0m[[0m[31merror[0m] [0m[0morg.apache.spark.sql.AnalysisException: expression 'cyb1.`Year`' is neither present in the group by, nor is it an aggregate function. Add to group by or wrap in first() (or first_value) if you don't care which value you get.;;[0m
+[0m[[0m[31merror[0m] [0m[0mSort [year#647 DESC NULLS LAST], true[0m
+[0m[[0m[31merror[0m] [0m[0m+- Aggregate [Attack_vector#661], [Year#647, Attack_vector#661, count(Attack_vector#661) AS count(Attack_vector)#670L][0m
+[0m[[0m[31merror[0m] [0m[0m   +- Filter NOT (Attack_vector#661 = NA)[0m
+[0m[[0m[31merror[0m] [0m[0m      +- SubqueryAlias cyb1[0m
+[0m[[0m[31merror[0m] [0m[0m         +- HiveTableRelation `default`.`cyb1`, org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe, [Year#647, Organisation#648, Critical_Industry#649, Organisation_size#650, Sector#651, Country#652, Improper_network_segmentation#653, Inappropriate_remote_access#654, Absence_of_encryption#655, Restructuring_after_attack#656, Ransom_paid#657, Number_of_users_affected#658, Attack_type#659, Attacker#660, Attack_vector#661, Names_exposed#662, Address_leaked#663, PII_exposed#664, Credit_card_details_leaked#665, SSN_taxID_leaked#666, Subsequent_fraudulent_use_of_data#667, Summary#668][0m
+[0m[[0m[31merror[0m] [0m[0m[0m
+[0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.sql.catalyst.analysis.CheckAnalysis$class.failAnalysis(CheckAnalysis.scala:41)[0m
+[0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.sql.catalyst.analysis.Analyzer.failAnalysis(Analyzer.scala:92)[0m
+[0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.sql.catalyst.analysis.CheckAnalysis$$anonfun$checkAnalysis$1.org$apache$spark$sql$catalyst$analysis$CheckAnalysis$class$$anonfun$$checkValidAggregateExpression$1(CheckAnalysis.scala:191)[0m
+[0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.sql.catalyst.analysis.CheckAnalysis$$anonfun$checkAnalysis$1$$anonfun$apply$9.apply(CheckAnalysis.scala:224)[0m
+[0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.sql.catalyst.analysis.CheckAnalysis$$anonfun$checkAnalysis$1$$anonfun$apply$9.apply(CheckAnalysis.scala:224)[0m
+[0m[[0m[31merror[0m] [0m[0m	at scala.collection.immutable.List.foreach(List.scala:392)[0m
+[0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.sql.catalyst.analysis.CheckAnalysis$$anonfun$checkAnalysis$1.apply(CheckAnalysis.scala:224)[0m
+[0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.sql.catalyst.analysis.CheckAnalysis$$anonfun$checkAnalysis$1.apply(CheckAnalysis.scala:84)[0m
+[0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.sql.catalyst.trees.TreeNode.foreachUp(TreeNode.scala:127)[0m
+[0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.sql.catalyst.trees.TreeNode$$anonfun$foreachUp$1.apply(TreeNode.scala:126)[0m
+[0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.sql.catalyst.trees.TreeNode$$anonfun$foreachUp$1.apply(TreeNode.scala:126)[0m
+[0m[[0m[31merror[0m] [0m[0m	at scala.collection.immutable.List.foreach(List.scala:392)[0m
+[0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.sql.catalyst.trees.TreeNode.foreachUp(TreeNode.scala:126)[0m
+[0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.sql.catalyst.analysis.CheckAnalysis$class.checkAnalysis(CheckAnalysis.scala:84)[0m
+[0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.sql.catalyst.analysis.Analyzer.checkAnalysis(Analyzer.scala:92)[0m
+[0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.sql.catalyst.analysis.Analyzer.executeAndCheck(Analyzer.scala:105)[0m
+[0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.sql.execution.QueryExecution.analyzed$lzycompute(QueryExecution.scala:57)[0m
+[0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.sql.execution.QueryExecution.analyzed(QueryExecution.scala:55)[0m
+[0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.sql.execution.QueryExecution.assertAnalyzed(QueryExecution.scala:47)[0m
+[0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.sql.Dataset$.ofRows(Dataset.scala:74)[0m
+[0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.sql.SparkSession.sql(SparkSession.scala:642)[0m
+[0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.sql.SQLContext.sql(SQLContext.scala:694)[0m
+[0m[[0m[31merror[0m] [0m[0m	at P1$.insertCyberAttacks(P1.scala:169)[0m
+[0m[[0m[31merror[0m] [0m[0m	at P1$.main(P1.scala:47)[0m
+[0m[[0m[31merror[0m] [0m[0m	at P1.main(P1.scala)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)[0m
+[0m[[0m[31merror[0m] [0m[0m	at java.lang.reflect.Method.invoke(Unknown Source)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.Run.invokeMain(Run.scala:143)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.Run.execute$1(Run.scala:93)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.Run.$anonfun$runWithLoader$5(Run.scala:120)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.Run$.executeSuccess(Run.scala:186)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.Run.runWithLoader(Run.scala:120)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.Defaults$.$anonfun$bgRunTask$6(Defaults.scala:1983)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.Defaults$.$anonfun$termWrapper$2(Defaults.scala:1922)[0m
+[0m[[0m[31merror[0m] [0m[0m	at scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.java:23)[0m
+[0m[[0m[31merror[0m] [0m[0m	at scala.util.Try$.apply(Try.scala:213)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.internal.BackgroundThreadPool$BackgroundRunnable.run(DefaultBackgroundJobService.scala:369)[0m
+[0m[[0m[31merror[0m] [0m[0m	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)[0m
+[0m[[0m[31merror[0m] [0m[0m	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)[0m
+[0m[[0m[31merror[0m] [0m[0m	at java.lang.Thread.run(Unknown Source)[0m
+[0m[[0m[31merror[0m] [0m[0m(Compile / [31mrun[0m) org.apache.spark.sql.AnalysisException: expression 'cyb1.`Year`' is neither present in the group by, nor is it an aggregate function. Add to group by or wrap in first() (or first_value) if you don't care which value you get.;;[0m
+[0m[[0m[31merror[0m] [0m[0mSort [year#647 DESC NULLS LAST], true[0m
+[0m[[0m[31merror[0m] [0m[0m+- Aggregate [Attack_vector#661], [Year#647, Attack_vector#661, count(Attack_vector#661) AS count(Attack_vector)#670L][0m
+[0m[[0m[31merror[0m] [0m[0m   +- Filter NOT (Attack_vector#661 = NA)[0m
+[0m[[0m[31merror[0m] [0m[0m      +- SubqueryAlias cyb1[0m
+[0m[[0m[31merror[0m] [0m[0m         +- HiveTableRelation `default`.`cyb1`, org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe, [Year#647, Organisation#648, Critical_Industry#649, Organisation_size#650, Sector#651, Country#652, Improper_network_segmentation#653, Inappropriate_remote_access#654, Absence_of_encryption#655, Restructuring_after_attack#656, Ransom_paid#657, Number_of_users_affected#658, Attack_type#659, Attacker#660, Attack_vector#661, Names_exposed#662, Address_leaked#663, PII_exposed#664, Credit_card_details_leaked#665, SSN_taxID_leaked#666, Subsequent_fraudulent_use_of_data#667, Summary#668][0m
+[0m[[0m[31merror[0m] [0m[0mTotal time: 52 s, completed Feb 2, 2022 11:39:04 AM[0m
+[0m[[0m[0mdebug[0m] [0m[0m> Exec(shell, None, None)[0m
+[0m[[0m[0mdebug[0m] [0m[0mForcing garbage collection...[0m
