@@ -1,34 +1,46 @@
 # P1 New Analyser
 
+Project Description:
+
     A brief data analysis on the top 1500 data breach around the world.​
-    
-    Using:
-    Hadoop MapReduce​
+    The CSV file in imported to the local HDFS, where tables are also created to accommodate the data file. Finally, a user table will also be created on the local SQL       database to store users' credentials and their encrypted password.
+
+Thenologies Used:
+
+    Hadoop MapReduce -version 3.3.1
 
     YARN​
 
     HDFS​
 
-    HIVE​
+    Apache HIVE -version 3.1.2
 
-    Apache Spark​
+    Apache Spark -version 3.1.2
 
-    Scala​
+    Scala -version 2.11.12
 
-    MySQL database​
+    MySQL database
+    
+    MySQL Workbench -version 8.0
+    
+ Features:
+ 
+    -Secure login for admin and basic user with SHA-256 hash algorithm
+    - Initial data stored on HDFS for resilience 
+    -Hive partitionning and bucketing
+    -SaprkSession implementation
+    -JDBC connector
+    -custom queries
+    
+   Gettiing Started:
+   -Create empty folder
+   -Git Bash into that folder
+   -Use   ~$ git clone  to clone repository
+   - Open your favorite IDE and open the project folder you have just created
+   
+   
+    
+    
+    
 
-Description:
 
-Using the combination of the technologies above mentioned​
-
-I will run a quick analysis on a CSV file containing data about the top 1500 cyber breaches.​
-
-The CSV file in imported to the local HDFS, where tables are also created to accommodate the data file. ​
-
-A first table will be populated from a temporary table.​
-
-And using MapReduce, a second table will be created and partitioned for faster query.​
-
-Finally, a user table will also be created on the local SQL database to store​
-
-users' credentials and their encrypted password.
