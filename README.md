@@ -37,6 +37,10 @@ Thenologies Used:
    -Git Bash into that folder
    -Use   ~$ git clone  to clone repository
    - Open your favorite IDE and open the project folder you have just created
+
+
+Contributors:
+Abdoulaye Diakite
    
    
     
