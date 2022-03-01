@@ -32,7 +32,7 @@ object P1 {
         val driver = "com.mysql.cj.jdbc.Driver"
         val url = "jdbc:mysql://localhost:3306/BigData" // Modify for whatever port you are running your DB on
         val username = "root"
-        val password = "Spart@11" // Update to include your password
+        val password = "*****" // Update to include your password
         var connection:Connection = null
 
         Class.forName(driver)
